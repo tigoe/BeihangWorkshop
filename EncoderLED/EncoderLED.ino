@@ -16,11 +16,11 @@ void loop() {
   // check to see if it has changed:
   if (encoderPos != lastPosition) {
     // constrain the encoder to a 0-255 range:
-    newPosition = constrain(encoderPos, 0, 255);
+    encoderPos = constrain(encoderPos, 0, 255);
     // use the encoder position to set the state of an LED:
-    analogWrite(4, newPosition);
+    analogWrite(4, encoderPos);
     // print the value to the serial monitor:
-    Serial.println(newPosition);
+    Serial.println(encoderPos);
     // save the current position for comparison next time:
     lastPosition = encoderPos;
   }
