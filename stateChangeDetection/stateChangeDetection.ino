@@ -1,5 +1,9 @@
 int lastButtonState = 0;
 
+/*
+ * State change detection
+ */
+
 void setup() {
   // put your setup code here, to run once:
   pinMode(5, INPUT);
