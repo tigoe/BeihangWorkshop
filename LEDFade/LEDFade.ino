@@ -2,9 +2,9 @@
   LED continual fade with millis() delay method
 
 */
-int intensity = 0;   // intensity of the LED
-int  = 0;            // last time the LED faded
-int change = 1;      // amount of change for the LED
+int intensity = 0;    // intensity of the LED
+int lastFadeTime = 0; // last time the LED faded
+int change = 1;       // amount of change for the LED
 
 void setup() {
   // make the LED an output:
