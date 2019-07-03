@@ -33,7 +33,7 @@ void loop() {
     if (intensity == 0) {
       // if you are on pin 5, go back to 2:
       if (color == 5) {
-        color == 2;
+        color = 2;
         // otherwise, add one to the channel number
       } else {
         color++;
