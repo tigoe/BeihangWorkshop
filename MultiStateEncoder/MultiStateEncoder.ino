@@ -1,6 +1,9 @@
 
 /*
-   State change detection
+   Reads a pushbutton to change between three properties being changed.
+   Tben reads an encoder 
+   Then changes one of three properties depending on the number of button pushes.
+   
 */
 #include <Encoder.h>      // include the encoder library
 Encoder myEncoder(0, 1);  // set the pin numbers for the encoder
@@ -19,6 +22,7 @@ void setup() {
 }
 
 void loop() {
+  // read the button for any change:
   readButtonChange();
   /////////////////////////////////////////////////////////////////////
 
