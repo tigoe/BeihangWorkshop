@@ -1,13 +1,13 @@
 /*
   Sends an ASCII-numeric string out the serial port when you type it
-  in the canvas.
-    Use with the WS281xSerial example.
-*/
+ in the canvas.
+ Use with the WS281xSerial example.
+ */
 
 import processing.serial.*;
 
 Serial myPort;  // Create object from Serial class
-String outString;
+String outString = "";
 
 void setup() 
 {
@@ -16,11 +16,13 @@ void setup()
   String portName = Serial.list()[0];
   // make an instance of the serial library with this port:
   myPort = new Serial(this, portName, 9600);
+  textSize(36);
 }
 
 void draw() {
   background(0);
   fill(#00FFEE);
+  text(outString, width/2, height/2);
 }
 
 void keyPressed() {
