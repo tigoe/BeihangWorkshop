@@ -12,6 +12,7 @@ String outString = "";
 void setup() 
 {
   size(640, 480);
+  printArray(Serial.list());
   // open the first serial port in the list:
   String portName = Serial.list()[0];
   // make an instance of the serial library with this port:
