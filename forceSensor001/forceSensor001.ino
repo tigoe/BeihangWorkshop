@@ -30,13 +30,14 @@ void loop() {
   int ledCount = forceSensor / 25;
   Serial.println(ledCount);
   // if the number of LEDs to turn on > 0,
-  // then turn on some LEDs:
+  // then turn on ledCount leds:
   if (ledCount > 0) {
-    for (int p = 0; p < pixelCount; p++) {
+    for (int p = 0; p < ledCount; p++) {
       strip.setPixelColor(p, color);
       strip.show();
       delay(1);
     }  
+    // if ledCount is 0, turn off ALL the LEDS:
   } else {
     for (int p = pixelCount; p >= 0; p--) {
       strip.setPixelColor(p, 0);
