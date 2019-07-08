@@ -28,10 +28,20 @@ void setup() {
 }
 
 void loop() {
-  listenForTimeSet();
+  // listen for serial input to set the time:
+  readTimeString();
   // get current second
   int thisSecond = rtc.getSeconds();
 
+  // if the second has changed, change the corresponding pixel:
+  if (thisSecond != lastSecond) {
+    strip.setPixelColor(thisSecond, 0x98341200);  // a warm-ish white
+    strip.setPixelColor(lastSecond, 0);           // turn off previous second's pixel
+    lastSecond = thisSecond;
+    Serial.println(thisSecond);
+  }
+
+  // loop over all the pixels, setting the hue using the current second:T
   for (int p = 0; p < pixelCount; p++) {
     // set hue according to color wheel and seconds
     unsigned int hue = map(thisSecond, 0, 60, 0, 65535);
@@ -39,22 +49,21 @@ void loop() {
     unsigned long color = strip.ColorHSV(hue, 255, 127);
     // do a gamma correction:
     unsigned long correctedColor = strip.gamma32(color);
+    // the current second should be white, so don't set it:
     if (p != thisSecond) {
       strip.setPixelColor(p, correctedColor);   // set the color for this pixel
     }
 
   }
-  // if the second has changed, take action:
-  if (thisSecond != lastSecond) {
-    strip.setPixelColor(thisSecond, 0x98341200);
-    strip.setPixelColor(lastSecond, 0);
-    lastSecond = thisSecond;
-    Serial.println(thisSecond);
-  }
+  // update the strip:
   strip.show();
 }
 
-void listenForTimeSet() {
+// looks for a numeric string like this:  hh:mm:ss
+// uses hh to set hours, mm to set minutes, and ss to set seconds
+
+void readTimeString() {
+  // if there is any incoming serial data:
   if (Serial.available() > 0) {
     // listen for hh:mm:ss:
     hours = Serial.parseInt();
