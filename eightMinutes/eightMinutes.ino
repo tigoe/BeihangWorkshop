@@ -18,12 +18,13 @@ void loop() {
       // take action
       Serial.println("eight minutes");
       // turn on three lights
-      if (nextLight == 58) {
+      changeLights(nextLight);
+      if (nextLight == 57) {
         nextLight = 0;
       } else {
         nextLight++;
       }
-      changeLights(nextLight);
+
       previous = current;
     }
   } else {
@@ -41,7 +42,7 @@ void loop() {
   delay(1000);
 }
 
-void changeLights(int   changed = true;) {
+void changeLights(int startingLight) {
   //  strip.clear();
   Serial.print("StartingLight = ");
   Serial.println(startingLight);
