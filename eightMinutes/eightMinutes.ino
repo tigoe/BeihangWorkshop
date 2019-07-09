@@ -18,7 +18,7 @@ void loop() {
       // take action
       Serial.println("eight minutes");
       // turn on three lights
-      if (nextLight == 59) {
+      if (nextLight == 58) {
         nextLight = 0;
       } else {
         nextLight++;
