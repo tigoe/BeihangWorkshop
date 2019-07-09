@@ -1,4 +1,5 @@
-int current, previous;
+int current = 0;
+int previous = 0;
 int nextLight = 0;
 
 void setup() {
@@ -46,9 +47,9 @@ void changeLights(int startingLight) {
   //  strip.clear();
   Serial.print("StartingLight = ");
   Serial.println(startingLight);
-  for (int p = startingLight;  // stating value of P
-       p < startingLight + 3;  // do it until this is false
-       p++) {                  // do this every time through the loop
+  for (int p = startingLight;  // stating value of p
+       p < startingLight + 3;  // run the for loop until this is false
+       p++) {                  // do this every time through the for loop
     Serial.print("    p = ");
     Serial.println(p);
     //    strip.setPixelColor(p, onColor);
