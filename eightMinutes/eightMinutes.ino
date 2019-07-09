@@ -7,15 +7,18 @@ void setup() {
 }
 
 void loop() {
-  current++;
-  current %= 60;
+  if (current < 60) {
+    current++;
+  } else {
+    current = 0;
+  }
   // put your main code here, to run repeatedly:
   if (current > previous) {
     if (current - previous >= 8) {
       // take action
       Serial.println("eight minutes");
       // turn on three lights
-      if (nextLight == 59) ) {
+      if (nextLight == 59) {
         nextLight = 0;
       } else {
         nextLight++;
@@ -38,9 +41,15 @@ void loop() {
   delay(1000);
 }
 
-void changeLights(int startingLight) {
-  strip.clear();
-  for (int p = startingLight; p > startingLight + 3; p++) {
-    strip.setPixelColor(p, onColor);
+void changeLights(int   changed = true;) {
+  //  strip.clear();
+  Serial.print("StartingLight = ");
+  Serial.println(startingLight);
+  for (int p = startingLight;  // stating value of P
+       p < startingLight + 3;  // do it until this is false
+       p++) {                  // do this every time through the loop
+    Serial.print("    p = ");
+    Serial.println(p);
+    //    strip.setPixelColor(p, onColor);
   }
 }
