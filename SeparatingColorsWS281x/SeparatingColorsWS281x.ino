@@ -16,8 +16,8 @@ void setup() {
 }
 
 void loop() {
-  // pick a random color:
-  long randomColor = random(4000000000);
+  // pick a random color (biggest random you can make):
+  long randomColor = random(0xEEFFFFFF);
   // loop over all the pixels:
   for (int pixel = 0; pixel < pixelCount; pixel++) {
     strip.setPixelColor(pixel, randomColor); // set the color for this pixel
