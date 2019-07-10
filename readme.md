@@ -64,7 +64,15 @@ Plug your MKR into your breadboard with the top pins in the top row of the board
 
 ![Figure 3. MKR Zero on a breadoard with Vcc and GND connected to the voltage and ground bus rows. The bus rows are also wired to their counterparts on the opposite side](docs/img/mkrzero-breadboard_bb.png)
 
-*Figure 3. MKR Zero on a breadoard with Vcc and GND connected to the voltage and ground bus rows. The bus rows are also wired to their counterparts on the opposite side*
+*Figure 3. MKR Zero on a breadoard with Vcc and GND connected to the voltage and ground bus rows. The bus rows are also wired to their counterparts on the opposite side.*
+
+## Bluetooth LE
+
+A very brief introduction to Bluetooth LE.
+
+Bluetooth LE devices can be either **central** devices, or **peripherals**. Peripheral devices offer Bluetooth services that central devices can receive. For example, your fitness device is a peripheral device and the mobile phone or laptop that connects to it is a central device. 
+
+Peripherals offer **services**, which consist of **characteristics**. For example, a light controller might offer a light service, with four characteristics: red, green, blue, and white channels. Characteristics have **values**, and central devices can connect to a peripheral and read, write, or subscribe to those changing values. 
 
 ## Bluetooth LE Links
 
