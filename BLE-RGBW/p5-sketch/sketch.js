@@ -21,12 +21,16 @@ function setup() {
   // Create a text input
   redSlider = createSlider();
   redSlider.position(15, 100);
+  redSlider.changed(sendRed);
   greenSlider = createSlider();
+  greenSlider.changed(sendGreen);
   greenSlider.position(15, 150);
   blueSlider = createSlider();
+  blueSlider.changed(sendBlue);
   blueSlider.position(15, 200);
   whiteSlider = createSlider();
   whiteSlider.position(15, 250);
+  whiteSlider.changed(sendWhite);
 
   // Create a 'Write' button
   const writeButton = createButton('Write');
@@ -47,17 +51,37 @@ function gotCharacteristics(error, characteristics) {
   greenCharacteristic = characteristics[1];
   blueCharacteristic = characteristics[2];
   whiteCharacteristic = characteristics[3];
-  
+
 }
 
 function writeToBle() {
-   const redValue = redSlider.value();
-   const greenValue = greenSlider.value();
-   const blueValue = blueSlider.value();
-   const whiteValue = whiteSlider.value();
+  const redValue = redSlider.value();
+  const greenValue = greenSlider.value();
+  const blueValue = blueSlider.value();
+  const whiteValue = whiteSlider.value();
   // Write the value of the input to the myCharacteristic
   myBLE.write(redCharacteristic, redValue);
   myBLE.write(greenCharacteristic, greenValue);
   myBLE.write(blueCharacteristic, blueValue);
+  myBLE.write(whiteCharacteristic, whiteValue);
+}
+
+
+function sendRed() {
+  const redValue = redSlider.value();
+  myBLE.write(redCharacteristic, redValue);
+}
+
+
+function sendGreen() {
+  const greenValue = greenSlider.value();
+  myBLE.write(greenCharacteristic, greenValue);
+}
+function sendBlue() {
+  const blueValue = blueSlider.value();
+  myBLE.write(blueCharacteristic, blueValue);
+}
+function sendWhite() {
+  const whiteValue = whiteSlider.value();
   myBLE.write(whiteCharacteristic, whiteValue);
 }
