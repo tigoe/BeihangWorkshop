@@ -11,6 +11,7 @@ int intensity;      // the level of the light
 int lastSensor;     // the last sensor reading
 int interval = 20;  // the delay between changes to intensity
 long lastFade = 0;  // the last time you changed the intensity
+int threshold = 40; // the minimum level of the sensor that you care about
 
 void setup() {
   // put your setup code here, to run once:
@@ -24,7 +25,7 @@ void loop() {
   // read the sensor, /4 to fit a byte:
   int sensor = analogRead(A0) / 4;
   // if the sensor is greater than the intensity:
-  if (sensor > intensity) {
+  if (sensor > intensity && sensor > threshold) {
     intensity = sensor;
     // if sensor  is not greater than intensity, fade the intensity down
   } else {
@@ -32,7 +33,7 @@ void loop() {
     if (millis() - lastFade > interval) {
       intensity--;
       if (intensity <= 0) {
-        intensity == 0;
+        intensity = 0;
       }
       lastFade = millis();
     }
