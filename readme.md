@@ -65,3 +65,26 @@ Plug your MKR into your breadboard with the top pins in the top row of the board
 ![Figure 3. MKR Zero on a breadoard with Vcc and GND connected to the voltage and ground bus rows. The bus rows are also wired to their counterparts on the opposite side](docs/img/mkrzero-breadboard_bb.png)
 
 *Figure 3. MKR Zero on a breadoard with Vcc and GND connected to the voltage and ground bus rows. The bus rows are also wired to their counterparts on the opposite side*
+
+## Bluetooth LE Links
+
+The MKR 1010 WiFi boards we have been using can also communicate using Bluetooth LE. Here are some links to more information on it:
+
+* An [introduction to BLE](https://github.com/tigoe/BLEDocs) by me, Alasdair Allan, Don Coleman, and Sandeep Mistry
+* [Bluetooth LE code samples](https://github.com/tigoe/BluetoothLE-Examples)
+* Alasdair, Don, and Sandeep's [Bluetooth LE book]() is excellent
+* The [ArduinoBLE](https://github.com/arduino-libraries/ArduinoBLE) library, which was written with this board in mind
+* Instructions on upgrading the [MKR 1010 firmware](https://www.arduino.cc/en/Tutorial/WiFiNINA-FirmwareUpdater)
+* [p5.js](http://p5js.org), a JavaScript environment designed in the spirit of Processing
+    * the p5.js [web editor](https://editor.p5js.org/)
+* The [p5.ble library](https://itpnyu.github.io/p5ble-website) by Yining Shi and Jingwen Zhu. Works only on Chrome browser
+* A couple of useful BLE apps:
+    * LightBlue for [Android](https://play.google.com/store/apps/details?id=com.punchthrough.lightblueexplorer), [macOS](https://apps.apple.com/us/app/lightblue/id639944780?mt=12) or [iOS](https://apps.apple.com/us/app/lightblue-explorer-bluetooth/id557428110)
+    * [BlueSee](https://www.synapse.com/bluesee) for macOS or iOS
+    * [Bluetility](https://github.com/jnross/Bluetility) for macOS
+    * [BLE Scanner](https://play.google.com/store/apps/details?id=com.macdom.ble.blescanner&hl=en) for Android
+    * nRF Connect for [Android](https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=en), [iOS](https://itunes.apple.com/us/app/nrf-connect/id1054362403), and [Desktop OSes](https://www.nordicsemi.com/Software-and-Tools/Development-Tools/nRF-Connect-for-desktop)
+    * [Bluetooth LE Explorer](https://www.microsoft.com/en-us/p/bluetooth-le-explorer/9n0ztkf1qd98#activetab=pivot:overviewtab) for Windows
+* [noble](https://github.com/noble/noble), ad BLE framework for no[de.js](https://nodejs.org/en/)
+
+
