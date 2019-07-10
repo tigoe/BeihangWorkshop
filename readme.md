@@ -80,7 +80,7 @@ The MKR 1010 WiFi boards we have been using can also communicate using Bluetooth
 
 * An [introduction to BLE](https://github.com/tigoe/BLEDocs) by me, Alasdair Allan, Don Coleman, and Sandeep Mistry
 * [Bluetooth LE code samples](https://github.com/tigoe/BluetoothLE-Examples)
-* Alasdair, Don, and Sandeep's [Bluetooth LE book]() is excellent
+* Alasdair, Don, and Sandeep's [Bluetooth LE book](http://makebluetooth.com/) is excellent
 * The [ArduinoBLE](https://github.com/arduino-libraries/ArduinoBLE) library, which was written with this board in mind
 * Instructions on upgrading the [MKR 1010 firmware](https://www.arduino.cc/en/Tutorial/WiFiNINA-FirmwareUpdater)
 * [p5.js](http://p5js.org), a JavaScript environment designed in the spirit of Processing
